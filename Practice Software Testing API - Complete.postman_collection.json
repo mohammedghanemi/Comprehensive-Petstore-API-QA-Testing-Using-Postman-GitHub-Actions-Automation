@@ -1,0 +1,819 @@
+{
+	"info": {
+		"_postman_id": "07ba61ee-c09a-41f0-9347-6de64c3ed805",
+		"name": "Practice Software Testing API - Complete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49386197",
+		"_collection_link": "https://mohammed-ghanemi-9281544.postman.co/workspace/Mohammed-Ghanemi's-Workspace~2688cd6c-fe36-42d0-812e-5d3e1803a200/collection/49386197-07ba61ee-c09a-41f0-9347-6de64c3ed805?action=share&source=collection_link&creator=49386197"
+	},
+	"item": [
+		{
+			"name": "AUTHENTICATION FOLDER",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"customer@practicesoftwaretesting.com\",\r\n  \"password\": \"welcome01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@practicesoftwaretesting.com\",\r\n  \"password\": \"welcome01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Test\",\r\n    \"last_name\": \"User\",\r\n    \"email\": \"moukjisd.ghanelokksl@gmail.com\",\r\n    \"password\": \"Str0ng!Passw0rd#2025\",\r\n    \"password_confirmation\": \"Str0ng!Passw0rd#2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/register",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIyODE1MjIsImV4cCI6MTc2MjI4MTgyMiwibmJmIjoxNzYyMjgxNTIyLCJqdGkiOiJKMk5MZWF5S0gxeFBDaXpnIiwic3ViIjoiMDFLOTgwREhBMUJXRDNINktSV0IzTk1aWkYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.P7knFzVda5CPY0_XPs3m7hwKh2vKVy-MmzXT7Qw4cTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/me",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIyODQyOTIsImV4cCI6MTc2MjI4NDU5MiwibmJmIjoxNzYyMjg0MjkyLCJqdGkiOiJsSWg3QkdQQnRSQUd3RVFuIiwic3ViIjoiMDFLOTgzVkNUUkM1MkFRMDlDRDZaNVJXRTciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.mPpGMkPhEYGKiEYCyiJAuHwVa5G-a9uY0rVuI2y__04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/logout",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIyODQyOTIsImV4cCI6MTc2MjI4NDU5MiwibmJmIjoxNzYyMjg0MjkyLCJqdGkiOiJsSWg3QkdQQnRSQUd3RVFuIiwic3ViIjoiMDFLOTgzVkNUUkM1MkFRMDlDRDZaNVJXRTciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.mPpGMkPhEYGKiEYCyiJAuHwVa5G-a9uY0rVuI2y__04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/users/refresh",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"users",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS FOLDER",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?page=2&per_page=5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products/01K983VD4V56SMP6BQRRKYG9GG",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products",
+								"01K983VD4V56SMP6BQRRKYG9GG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Products by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?search=hammer",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "hammer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?category=pliers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "pliers"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?brand=ForgeFlex Tools",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "ForgeFlex Tools"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Price Range",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?price_from=10&price_to=20",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "price_from",
+									"value": "10"
+								},
+								{
+									"key": "price_to",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Stock Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?in_stock=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "in_stock",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Eco-Friendly",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?is_eco_friendly=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "is_eco_friendly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Location Offer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?is_location_offer=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "is_location_offer",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple Filters Combined",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?category=hammer&price_from=10&price_to=15&in_stock=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "hammer"
+								},
+								{
+									"key": "price_from",
+									"value": "10"
+								},
+								{
+									"key": "price_to",
+									"value": "15"
+								},
+								{
+									"key": "in_stock",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?sort=price&order=asc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "price"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Products-1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products?sort=name&order=desc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "name"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIyODYyNTEsImV4cCI6MTc2MjI4NjU1MSwibmJmIjoxNzYyMjg2MjUxLCJqdGkiOiI1UWM0bDBaeGF6NzhoU040Iiwic3ViIjoiMDFLOTgzVkNSOEpITVI0ODRNNkJFU1E4MlYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.EZmPrUHX3SA8jIbR02VUqk_9EH_6CmRkBHW9frY37Yo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Electric Drill\",\r\n  \"description\": \"High-performance cordless drill with lithium-ion battery\",\r\n  \"price\": 49.99,\r\n  \"category_id\": \"01K983VD311C3Q8BPP2JSBEP7C\",\r\n  \"brand_id\": \"01K983VCQXF2KES3D325DQSQG2\",\r\n  \"in_stock\": true,\r\n  \"is_rental\": false,\r\n  \"is_location_offer\": false,\r\n  \"is_eco_friendly\": true,\r\n  \"co2_rating\": \"B\",\r\n  \"product_image_id\": \"01K983VD3DVZ6FWVATEXCQFAFS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product (Admin)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Pre-request script: Ensure Authorization token is present and non-empty",
+									"const token = pm.variables.get('auth_token');",
+									"if (!token || token.trim() === \"\") {",
+									"    pm.environment.set(\"__block_request_reason\", \"Missing or empty Authorization token. Set 'auth_token' variable.\");",
+									"    throw new Error(\"Authorization token is missing or empty. Please set the 'auth_token' variable before sending the request.\");",
+									"} else {",
+									"    pm.environment.unset(\"__block_request_reason\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIzMzc5OTUsImV4cCI6MTc2MjMzODI5NSwibmJmIjoxNzYyMzM3OTk1LCJqdGkiOiJma1M1Y0lQMWU2cTloNm4wIiwic3ViIjoiMDFLOTlRQkFFNUFBNzA0UlBDVktRRlE5V0oiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.bSbk9_3mk1OXoeeRTVDKy26hLkrB-c0yJE7dG_dSHJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sledgehammer - Updated\"\r\n    \"description\":\"Updated description\",\r\n    \"price\":20.99\r\n    \"category_id\":\"01K99QBAQQXXT7EXW80TQAS1QE\",\r\n    \"brand_id\":\"01K99QBADXGTSZK6ZDZ1SPFT7Y\",\r\n    \"in_stock\":true,\r\n    \"is_rental\":false,\r\n    \"is_location_offer\":false,\r\n    \"is_eco_friendly\":false,\r\n    \"co2_rating\":\"D\",\r\n    \"product_image_id\":\"01K99QBAR5T1PFH3PQ2B6F16DK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/products/01K99QBAS95JGCXQJHAEFX515T",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"products",
+								"01K99QBAS95JGCXQJHAEFX515T"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORIES FOLDER",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjIyODY3NzIsImV4cCI6MTc2MjI4NzA3MiwibmJmIjoxNzYyMjg2NzcyLCJqdGkiOiJrNkIwcDZqcVJ2MHA0eG5kIiwic3ViIjoiMDFLOTg3OTg0RlpTUTRRQ1dNS1cwNEE3R0MiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.TCTs5PJ2aSANubGEMxdXxV4XAKKs-VbEXJ2Y7sTZ934",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.practicesoftwaretesting.com/categories",
+							"protocol": "https",
+							"host": [
+								"api",
+								"practicesoftwaretesting",
+								"com"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BRANDS FOLDER",
+			"item": [
+				{
+					"name": "Get All Brands",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDERS FOLDER",
+			"item": [
+				{
+					"name": "Get User Orders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
